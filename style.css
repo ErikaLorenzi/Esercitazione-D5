@@ -1,0 +1,65 @@
+.container {
+    margin-left: 4rem;
+    margin-top: 4rem;
+    font-size: 0            
+    /* elimina lo spazio che il browser interpone tra gli elementi con inline-block */
+
+}
+.container div {
+    width: 70px;
+    height: 60px;
+    border: 1px solid black;
+    display: inline-block; 
+    font-size:1rem; /* senza le lettere non sarebbero visibili */
+    /* 1 punto */
+}
+
+div:nth-child(even) {   /* 2 punto */
+    border-color: red;  
+}
+
+.container div:nth-child(odd) span:nth-child(2n+0) {    /* 3 punto */
+    color: green;   
+}
+
+.container div:nth-child(2) span:last-of-type { /* 4 punto */
+color: blue; 
+}
+
+.container div:nth-child(6) span:not(:last-of-type) {   /* 5 punto */
+color: yellow; 
+}
+
+/* Gli esercizi seguenti richiederanno il posizionamento CSS degli elementi!position:relative ← genitore (div);position:absolute ← figlio (span) */
+
+.container div {
+position: relative;
+}
+
+/* .container span {
+position: absolute;
+}  */
+
+.container div span:first-of-type { /* 6 punto */
+position: absolute;
+left: 40%;
+bottom: -20px;
+}
+
+.container div span:nth-child(2) {  /* 7 punto */
+position: absolute;
+left: 40%;
+top: -20px;
+}
+
+.container div:nth-child(10) span:last-of-type { /* 8 punto n.b. si poteva fare anche con ".container div:last-of-type span:last-of-type"*/
+position: absolute;
+right: -20px;
+top: 40%;
+}
+
+.container div:nth-child(1) span:last-of-type { /* 9 punto */
+position: absolute;
+left: -20px;
+top: 40%;
+}
